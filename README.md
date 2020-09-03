@@ -16,3 +16,4 @@ Vue is a progressive framework for building user interfaces. Vue is designed to 
 | Date     | Theory                      | Resources                   | Content                |
 | -------- | --------------------------- | --------------------------- | ---------------------- |
 | 09/09/20 | [Class 1](theory/class1.md) | [Class 1](resources/class1) | Introduction to Vue.js |
+10/09/20 | [Class 2](theory/class2.md) | [Class 2](resources/class2) | Vue Basics

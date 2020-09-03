@@ -65,4 +65,4 @@ Vue gives us very powerful tools to create our applications but let's say it's d
 
 We can therefore put in a wrapper all our application made in Vue or just a smaller piece that we will then integrate in the whole application. This wrapper becomes the DOM element where we will host what we want to create with Vue.
 
-![rootElement](Vue-Fundamentals-Course/assets/images/class1/code.png)
+![](../assets/class1/code.png)

@@ -65,4 +65,15 @@ Vue gives us very powerful tools to create our applications but let's say it's d
 
 We can therefore put in a wrapper all our application made in Vue or just a smaller piece that we will then integrate in the whole application. This wrapper becomes the DOM element where we will host what we want to create with Vue.
 
-![](../assets/class1/code.png)
+![rootElement](../assets/class1/rootElement.png)
+
+Mediante este elemento del DOM (div) controlaremos todo lo que mostramos en nuestra vista. Por eso este elemento es designado como el root element de nuestra aplicacion.
+Para que la capa ViewModel funcione, debemos conectar la capa de datos con la vista. Para ello inicializamos e instanciamos Vue en un objeto que reciba el mismo id que nuestro elemento del DOM. En este caso:
+
+```
+id="app"
+```
+
+![vueInstance](../assets/class1/vueObject.png)
+
+Este nuevo objeto de Vue recibe ciertos parametros de configuracion, el primero es el identificador del elemento del DOM donde va a residir el objeto de Vue que acabamos de crear.

@@ -67,8 +67,8 @@ We can therefore put in a wrapper all our application made in Vue or just a smal
 
 ![rootElement](../assets/class1/rootElement.png)
 
-Mediante este elemento del DOM (div) controlaremos todo lo que mostramos en nuestra vista. Por eso este elemento es designado como el root element de nuestra aplicacion.
-Para que la capa ViewModel funcione, debemos conectar la capa de datos con la vista. Para ello inicializamos e instanciamos Vue en un objeto que reciba el mismo id que nuestro elemento del DOM. En este caso:
+Through this element of the DOM (div) we will control everything that we show in our view. This is why this element is designated as the root element of our application.
+For the ViewModel layer to work, we must connect the data layer to the view. To do this, we initialize and instantiate Vue into an object that receives the same id as our DOM element. In this case:
 
 ```
 id="app"
@@ -76,4 +76,4 @@ id="app"
 
 ![vueInstance](../assets/class1/vueObject.png)
 
-Este nuevo objeto de Vue recibe ciertos parametros de configuracion, el primero es el identificador del elemento del DOM donde va a residir el objeto de Vue que acabamos de crear.
+This new Vue object receives certain configuration parameters, the first is the identifier of the DOM element where the Vue object we have just created will reside.

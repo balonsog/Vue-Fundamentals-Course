@@ -77,3 +77,5 @@ id="app"
 ![vueInstance](../assets/class1/vueObject.png)
 
 This new Vue object receives certain configuration parameters, the first is the identifier of the DOM element where the Vue object we have just created will reside.
+
+Como uno de los parametros adicionales que le podemos pasar a nuestro objeto de Vue, esta el objeto data. Literalmente este objeto es la capa de datos de nuestra apliacion, lo que se denomina la capa Model de Vue.

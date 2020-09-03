@@ -78,4 +78,16 @@ id="app"
 
 This new Vue object receives certain configuration parameters, the first is the identifier of the DOM element where the Vue object we have just created will reside.
 
-Como uno de los parametros adicionales que le podemos pasar a nuestro objeto de Vue, esta el objeto data. Literalmente este objeto es la capa de datos de nuestra apliacion, lo que se denomina la capa Model de Vue.
+As one of the additional parameters that we can pass to our Vue object, there is the data object. This object is literally the data layer of our application, which is the Model  of Vue layer. In it we will define the variables that we need our Vue object to handle locally.
+We will use this data to show it in our view or interpolate it, because in the core of Vue.js there is a system that allows us to process data in a declarative way to the DOM using a simple template syntax:
+
+```
+ var app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello developers",
+      }
+    });
+```
+
+At this point the data and the DOM are now linked, and everything is now reactive. This means that the DOM update used by Vue allows that if we modify the data layer, the visual layer will render only those parts that are affected. To do this quickly and easily, Vue uses what is called Virtual DOM.

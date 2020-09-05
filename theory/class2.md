@@ -9,3 +9,7 @@ Within the app variable, which represents our application in Vue, everything we 
 ```
 app.message = 'Hello class';
 ```
+
+Como hemos observado al definir la propiedad ***message***, mediante la sintaxis de template podemos manejar las variables de nuestra instancia de Vue. El problema es que esto nos serviria tan solo para poder interpolar variables o mostrar variables primitivas. Por ello Vue pone a nuestra disposicion otra manera de renderizar y trabajar con las variables que hemos definido en el objeto **data** de nuestra app de Vue. Es lo que se denomina **directivas**.
+
+Las directivas de Vue se pueden entender como funcionalidad de Vue para manejar nuestros datos de manera mas eficiente. Podriamos entender las directivas de Vue como una especie de funciones predefinidas. 

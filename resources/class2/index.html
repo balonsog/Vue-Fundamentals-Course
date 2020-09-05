@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link with our stylesheet -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Dev version-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Hello World in Vue</title>
+  </head>
+  <body>
+    <div id="app">{{ message }}</div>
+  </body>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello developers"
+      }
+    });
+  </script>
+</html>

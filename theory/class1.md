@@ -78,7 +78,7 @@ id="app"
 
 This new Vue object receives certain configuration parameters, the first is the identifier of the DOM element where the Vue object we have just created will reside.
 
-As one of the additional parameters that we can pass to our Vue object, there is the data object. This object is literally the data layer of our application, which is the Model  of Vue layer. In it we will define the variables that we need our Vue object to handle locally.
+As one of the additional parameters that we can pass to our Vue object, there is the data object. This object is literally the data layer of our application, which is the Model of Vue layer. In it we will define the variables that we need our Vue object to handle locally.
 We will use this data to show it in our view or interpolate it, because in the core of Vue.js there is a system that allows us to process data in a declarative way to the DOM using a simple template syntax:
 
 ```

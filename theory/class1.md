@@ -57,6 +57,14 @@ Although Vue allows us to add the library only in a part of our projects (Single
 
 The main thing to understand how Vue works is to understand the way this library handles the view of our project and connects it to the logical part where the data that will handle our application resides.
 
+**Debugging**
+
+Vue is characterized by being one of the frameworks with one of the most complete ecosystems. Apart from the main libraries it has to manage larger applications with more complexity in state control or routing issues, Vue puts at our disposal tools that facilitate debugging while we develop our applications.
+
+Besides the Command Line Interface that we have installed previously, we will work with the debbug tool Vue DevTools. This tool allows us to see in the browser in a fast and deep way all the information of our application. 
+![vueDevTools](../assets/class1/vueDevTools.png)
+
+
 **First Vue App**
 
 Vue is a framework that allows us to create web applications following a Model-view-viewmodel. This means that a large part of the functionality of this framework is totally directed to control the view of our application, which is divided into 3 parts. The part where we store the logic, the data (Model), the visual part (View) and an intermediate layer that allows us to interconnect these two parts mentioned above (ViewModel).

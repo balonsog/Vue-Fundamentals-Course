@@ -61,6 +61,9 @@ The main thing to understand how Vue works is to understand the way this library
 
 Vue is characterized by being one of the frameworks with one of the most complete ecosystems. Apart from the main libraries it has to manage larger applications with more complexity in state control or routing issues, Vue puts at our disposal tools that facilitate debugging while we develop our applications.
 
+![vueLibraries](../assets/class1/vueLibraries.png)
+
+
 Besides the Command Line Interface that we have installed previously, we will work with the debbug tool Vue DevTools. This tool allows us to see in the browser in a fast and deep way all the information of our application. 
 
 ![vueDevTools](../assets/class1/vueDevTools.png)

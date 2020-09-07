@@ -20,4 +20,11 @@ As we have observed when defining the ***message*** property, through the templa
 ```
 That's why Vue puts at our service another way of rendering and working with the variables that we have defined in the **data** object of our Vue app. This is called **directives**.
 
-Vue directives can be understood as Vue functionality to handle our data in a more efficient way. We could understand Vue directives as a kind of predefined functions. 
+Vue directives can be understood as Vue functionality to handle our data in a more efficient way. We could understand Vue directives as a kind of predefined functions.
+
+
+### Instance Lifecycle Hooks
+
+Al inicializar nuestra instancia de Vue, se desencadenan una serie de metodos asociados al ciclo de vida de nuestra aplicacion. Al mismo tiempo existe lo que se conoce como Lifecycle Hooks, para poder alterar la manera en la que se van desencadenando la llamada a los metodos mencionados anteriormente y poder asi anadir nuestro codigo en momentos especificos.
+
+![lifecycle](../assets/class2/lifecycle.png)

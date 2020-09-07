@@ -29,9 +29,11 @@ Declarative attributes are litle bit diferent than rendering. Trying to binding 
 <div id="app" title="{{message}}">{{ message }}</div>
 ```
 
-Vue pone a nuestra disposicion una directiva especifica: ``v-bind``
+Vue makes available to us a specific directive: ``v-bind``
 
 ```
-<!-- It works-->
 <div id="app" v-bind:title="message">{{ message }}</div>
 ```
+A few examples of use:
+
+![dataBinding](../assets/class2/binding.png)

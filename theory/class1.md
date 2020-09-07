@@ -95,6 +95,19 @@ el:'#app'
 ```
 
 As one of the additional parameters that we can pass to our Vue object in the **OPTIONS** object, there is the data object. This object is literally the data layer of our application, which is the Model of Vue layer. In it we will define the variables that we need our Vue object to handle locally.
+
+Within **data** we can define the variables we need to manage the logic of our application. Also Vue has ***instance properties*** which have a special nomenclature to differentiate them from the properties created ad hoc by us.
+
+```
+var data = { a: 1 }
+var vm = new Vue({
+  el: '#example',
+  data: data
+})
+
+vm.$data === data // => true
+```
+
 We will use this data to show it in our view or interpolate it, because in the core of Vue.js there is a system that allows us to process data in a declarative way to the DOM using a simple template syntax:
 
 ```

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+        <!-- Let's add Vue here -->
+        <div id="app">
+            
+            <h1>{{ title }}</h1>
+            
+            <p>{{ description }}</p>
+            
+            <a :href="link">{{ linkText }}</a>
+            
+        </div>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    title: 'Learning Vue with Fictizia',
+                    description: 'This is an interactive lesson on how to remove the data from the DOM and put it on the Vue instance.',
+                    link: 'https://vuejs.org/',
+                    linkText: 'Visit Vue'
+                }
+            });
+        </script>
+    </body>
+</html>

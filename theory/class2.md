@@ -20,7 +20,7 @@ As we have observed when defining the ***message*** property, through the templa
 ```
 That's why Vue puts at our service another way of rendering and working with the variables that we have defined in the **data** object of our Vue app. This is called **directives**.
 
-Vue directives can be understood as Vue functionality to handle our data in a more efficient way. We could understand Vue directives as a kind of predefined functions.
+Vue directives can be understood as Vue functionality to handle our data in a more efficient way. We could understand Vue directives as a kind of predefined functions. Directives are special attributes with the ```v-``` prefix.
 
 Declarative attributes are litle bit diferent than rendering. Trying to binding between an html attribute and our property defined in the data object needs a specific directive. 
 
@@ -37,3 +37,10 @@ Vue makes available to us a specific directive: ``v-bind``
 A few examples of use:
 
 ![dataBinding](../assets/class2/binding.png)
+
+
+ ``v-bind`` is used to reactively update an html attribute. In the example we have used we could interpret the binding as something similar to keep the title attribute of this element (div) updated with the message property.
+
+ En uno de los ejemplos anteriores:  ``<button v-bind:disabled="isButtonDisabled">Button</button>``
+ tan solo cuando la propiedad isButtonDisable sea true se creara un binding con la propiedad disable del boton. En cualquier otro caso la propiedad disabled no se incluira en el elemento html.
+ 

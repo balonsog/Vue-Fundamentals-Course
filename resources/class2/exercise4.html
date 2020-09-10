@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link with our stylesheet -->
+    <link rel="stylesheet" href="exercise4.css" />
+
+    <!-- Dev version-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>CardList in Vue</title>
+  </head>
+  <body>
+    
+    <div class="nav-bar"></div>
+    <div id="app">
+        <div class="product">
+            <div class="product-image">
+                <img :src="image">
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+                <!-- <p v-if="inStock">In Stock</p> -->
+                <!-- <p v-else>Out of Stock</p> -->
+
+                <p v-if="quantity > 10"> In Stock</p>
+                <p v-else-if="quantity >0 && quantity <= 10">Almost sold out</p>
+                <p v-else>Out of Stock</p>
+
+                <ul>
+                    <li v-for="detail in details">{{detail}}</li>
+                </ul>
+
+                <div v-for="variant in variants" :key="variant.variantId">
+                    <p v-on:mouseover="updateProduct(variant.variantImg)">{{variant.variantColor}}</p>
+                </div>
+            </div>
+
+            <div class="cart-container">
+                <!-- <button v-on:click="cart +=1">Add to Cart</button> -->
+                <button v-on:click="addToCart">Add to Cart</button>
+                <p>Cart({{ cart }})</p>
+            </div>
+        </div>
+    </div>
+  </body>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        product: 'Cap',
+        image: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/91ed4c7440334d628183aa56012c4dd1_9366/Gorra_Real_Madrid_3_bandas_Azul_DY7721_01_standard.jpg',
+        description: 'A fresh and cool Cap',
+        inStock:true,
+        quantity: 100,
+        details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+        variants: [
+            { variantId: 2234,variantColor: 'green', variantImg: 'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/6ffa25d5076543a7b242aa56012cdd1d_9366/Gorra_Real_Madrid_3_bandas_Verde_DY7722_01_standard.jpg'},
+            { variantId: 2235,variantColor: 'blue', variantImg: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/91ed4c7440334d628183aa56012c4dd1_9366/Gorra_Real_Madrid_3_bandas_Azul_DY7721_01_standard.jpg'}
+        ],
+        cart: 0
+      },
+      methods: {
+          addToCart(){
+              this.cart +=1;
+          },
+          updateProduct(newImage){
+              this.image = newImage;
+          }
+      }
+    });
+  </script>
+</html>

@@ -12,14 +12,30 @@
     <title>Hello World in Vue</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <p>{{product}} are in stock</p>
+
+      <ul>
+        <li v-for="product in products">{{product.name}} {{product.quantity}} <span v-if="product.quantity === 0">OUT of stock</span></li>
+        <p v-show="productsInStock">Hay productos que reponer</p>
+      </ul>
+    </div>
   </body>
 
   <script>
     var app = new Vue({
       el: "#app",
       data: {
-        message: "Hello developers"
+        product: 'Socks',
+        //products: ['t-shirts', 'trousers', 'caps']
+        products: [{id: 1, quantity: 0, name: 'Cool t-shirt'},
+                   {id: 1, quantity: 7, name: 'Cool trousers'},
+                   {id: 1, quantity: 10, name: 'Cool caps'}]
+      },
+      computed: {
+        productsInStock(){
+          return this.products.filter(elem => elem.quantity === 0).length > 0;
+        }
       }
     });
   </script>

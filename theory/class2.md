@@ -41,6 +41,8 @@ A few examples of use:
 
  ``v-bind`` is used to reactively update an html attribute. In the example we have used we could interpret the binding as something similar to keep the title attribute of this element (div) updated with the message property.
 
- En uno de los ejemplos anteriores:  ``<button v-bind:disabled="isButtonDisabled">Button</button>``
- tan solo cuando la propiedad isButtonDisable sea true se creara un binding con la propiedad disable del boton. En cualquier otro caso la propiedad disabled no se incluira en el elemento html.
- 
+  In one of the previous examples: 
+
+  ``<button v-bind:disabled="isButtonDisabled">Button</button>``
+
+ Only when the property isButtonDisable is true will create a binding with the disable property of the button. In any other case the disabled property will not be included in the html element.

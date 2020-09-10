@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dev version-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>First Exercise</title>
+</head>
+<body>
+    <div id="app">
+        <input name="field" v-model="field" />
+        <p v-if="field !== ''"> El valor del input es: {{newValue}}</p>
+    </div>
+</body>
+
+<script>
+ var app = new Vue({
+     el:'#app',
+     data: {
+         field: ''
+     },
+     computed: {
+         newValue() {
+             return this.field + '!!'
+         }
+     },
+     methods: {
+     }
+ });
+</script>
+</html>

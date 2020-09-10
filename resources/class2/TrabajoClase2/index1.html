@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dev version-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>First Exercise</title>
+</head>
+<body>
+    <div id="app">
+        <div class="list-container">
+            <p>{{product}}</p>
+            <p v-show="inStock"> In Stock</p>
+
+            <p v-show="updateStock">Hay productos que reponer</p>
+
+            <!-- <p v-else>Out of Stock</p> -->
+
+            <ul>
+                <li v-for="product in products">{{product.name}} {{product.quantity}}</li>
+            </ul>
+
+            <button v-on:click="updateQuantity">Update</button>
+        </div>
+    </div>
+</body>
+
+<script>
+ var app = new Vue({
+     el:'#app',
+     data: {
+         product: 'Cap',
+         products: [
+             {id: 1, name: 't-shirt', quantity: 10}, 
+             {id: 2, name: 'cap', quantity: 1},
+             {id: 3, name: 'jean', quantity: 10}],
+         quantity: 0,
+         inStock: true
+     },
+     computed: {
+         updateStock(){
+             return this.products.filter(elem => elem.quantity < 10).length > 0;
+         }
+     },
+     methods: {
+         updateQuantity(){
+           this.inStock =  this.quantity > 0 ? true : false; 
+         }
+     }
+ });
+</script>
+</html>

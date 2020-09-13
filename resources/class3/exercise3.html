@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+        <div id="app">
+            
+            <input name="field" v-model="fullName" />
+            
+            <p>The current firstName value is: {{ firstName }}</p>
+            <p>The current lastName value is: {{ lastName }}</p>
+            
+        </div>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    fullName: ''
+                },
+                computed: {
+                    firstName() {
+                        return this.fullName.split(' ')[0];
+                    },
+                    lastName() {
+                        return this.fullName.split(' ')[1];
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

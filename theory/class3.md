@@ -1,3 +1,3 @@
 # Vue Basics
 
-### Introduction to Vue.js: DOM & Virtual DOM
+### Computed Properties and Methods

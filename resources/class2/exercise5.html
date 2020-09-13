@@ -4,32 +4,34 @@
     </head>
     <body>
         
+        <!-- Let's add Vue here -->
         <div id="app">
-            <input name="field" v-model="fullName" />
             
-            <p>The current firstName value is: {{ firstName }}</p>
-            <p>The current lastName value is: {{ lastName }}</p>
+            <input name="field" v-model="field" />
+            
+            <!-- <p>The current value is {{ modified }}</p> -->
+            <p>The current value is {{ field }}</p>
+
+            
+            <button v-on:click="modified">Update</button>
+            
         </div>
         
         <script>
+            // Methods are no reactive
             var app = new Vue({
                 el: '#app',
                 data: {
                     field: '',
-                    firstName: '',
-                    lastName: '',
                 },
-                computed: {
-                    fullName: {
-                        get: function () {
-                            return this.firstName + ' ' + this.lastName;
-                        },
-                        set: function (newValue) {
-                            let names = newValue.split(' ');
-                            
-                            this.firstName = names[0];
-                            this.lastName = names[1];
-                        }
+                /* computed: {
+                    modified: function () {
+                        return this.field;
+                    }
+                } */
+                methods: {
+                    modified() {
+                        this.field += '!!';
                     }
                 }
             });

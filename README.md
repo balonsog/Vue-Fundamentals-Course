@@ -16,5 +16,6 @@ Vue is a progressive framework for building user interfaces. Vue is designed to 
 | Date     | Theory                      | Resources                   | Content                |
 | -------- | --------------------------- | --------------------------- | ---------------------- |
 | 09/09/20 | [Class 1](theory/class1.md) | [Class 1](resources/class1) | Introduction to Vue.js |
-10/09/20 | [Class 2](theory/class2.md) | [Class 2](resources/class2) | Vue Basics
-14/09/20 | [Class 3](theory/class3.md) | [Class 3](resources/class3) | Instance Lifecycle
+|10/09/20 | [Class 2](theory/class2.md) | [Class 2](resources/class2) | Vue Basics - Rendering and Binding|
+|14/09/20 | [Class 3](theory/class3.md) | [Class 3](resources/class3) | Vue Basics - Computed properties & Methods|
+|15/09/20 | [Class 4](theory/class4.md) | [Class 4](resources/class4) | Instance Lifecycle

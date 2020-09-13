@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{greet('afternoon')}}</h1>
+      <p>{{message}}</p>
+    </div>
+  </body>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: "Vue Developers",
+      },
+      methods: {
+        greet: function (time) {
+          return "Good" + " " + time + " " + this.message;
+        },
+      },
+    });
+  </script>
+</html>

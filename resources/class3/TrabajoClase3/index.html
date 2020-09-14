@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-bar"></div>
+    <div id="app">
+        <h1>{{product}}</h1>
+        <img :src="img" alt="">
+        <p v-if="inStock">Producto disponible</p>
+        <ul v-for="property in properties">
+            <li>{{property}}</li>
+        </ul>
+
+        <div v-for="product in products" :key="product.id" >
+            <p v-on:mouseover="changeProduct(product.img)">{{product.color}}</p>
+        </div>
+        
+        <button v-on:click="cart++" v-bind:disabled="!inStock">Add</button>
+        <p>Cart({{cart}})</p>
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+          product: 'Cool Cap',
+          img: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/91ed4c7440334d628183aa56012c4dd1_9366/Gorra_Real_Madrid_3_bandas_Azul_DY7721_01_standard.jpg',
+          products: [{id:1, color: 'blue', img: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/91ed4c7440334d628183aa56012c4dd1_9366/Gorra_Real_Madrid_3_bandas_Azul_DY7721_01_standard.jpg'},
+                     {id:2, color: 'green', img: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/91ed4c7440334d628183aa56012c4dd1_9366/Gorra_Real_Madrid_3_bandas_Azul_DY7721_01_standard.jpg'},
+                     {id:3, color: 'white', img: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/91ed4c7440334d628183aa56012c4dd1_9366/Gorra_Real_Madrid_3_bandas_Azul_DY7721_01_standard.jpg'}],
+          //inStock: true,
+          properties: ['80% cotton', '20% polyester', 'Gender Neutral'],
+          quantity: 4,
+          cart: 0
+      },
+      /**
+       * Computed properties example
+       * **/
+      computed: {
+        inStock() {
+         return this.quantity > this.cart
+        }
+      },
+      methods: {
+        changeProduct(newImage) {
+            this.img = newImage
+        }
+      }
+    });
+</script>
+</html>

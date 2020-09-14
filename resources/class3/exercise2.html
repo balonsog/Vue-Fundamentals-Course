@@ -26,7 +26,8 @@
                             return this.firstName + ' ' + this.lastName;
                         },
                         set: function (newValue) {
-                            var names = newValue.split(' ');
+                            var names = newValue.split(' '); // ['Pedro','Augusto']
+                                                            //  [0,       1]
                             
                             this.firstName = names[0];
                             this.lastName = names[1];

@@ -12,3 +12,11 @@ Class3 Computed Properties & Methods
 - Computed Properties
 - Event Handling
 - Class and Style binding
+
+Class 4 Components
+Class 5 Events
+Class 6 Instance LifeCycle
+Class 7 Vue Router
+Class 8 Vuex and State handling
+Class 9 Watchers and Mixins
+Class 10 Advanced concepts

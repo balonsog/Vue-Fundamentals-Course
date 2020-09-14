@@ -100,18 +100,18 @@
         return [this.firstname, this.lastname, this.age];
       },
       firstnameValidation() {
-        if (!this.firstname && this.errors !== []) {
+        if (!this.firstname && this.errors.length) {
           return 'Name Field is Required';
         }
       }
       ,
       lastnameValidation() {
-        if ( !this.lastname && this.errors !== []) {
+        if ( !this.lastname && this.errors.length) {
           return 'Last Name Field is Required';
         }
       },
       ageValidation() {
-        if (!this.age  && this.errors !== []) {
+        if (!this.age  && this.errors.length) {
           return 'Age Field is Required';
         }
       }

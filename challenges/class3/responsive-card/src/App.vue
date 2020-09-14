@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld 
+      :card="card"
+      @selected="getInfo"/>
   </div>
 </template>
 
@@ -11,6 +13,21 @@ export default {
   name: "App",
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      card: {
+        title: 'Stephany Torres',
+        subtitle: 'Web Developer',
+        body: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit incidunt eligendi harum fugiat, velit minima repellat voluptas aspernatur at inventore quos, eos temporibus asperiores voluptatem dolore necessitatibus numquam corrupti iste.',
+        recordid: '1'
+    }
+    };
+  },
+  methods: {
+    getInfo(recordid) {
+      console.log(recordid);
+    }
   }
 };
 </script>

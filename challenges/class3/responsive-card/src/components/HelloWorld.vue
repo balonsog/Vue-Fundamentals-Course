@@ -1,5 +1,8 @@
 <template>
-  <div class="card-wrapper">
+  <div class="card-wrapper" 
+    v-on:click="selectItem"
+    v-on:focus="switchState"
+    v-bind:class="{ selected: selected }">
     <div class="card">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- Starts dividing content in 2 columns -->
@@ -12,9 +15,9 @@
       </ul>
     </div>
     <div class="profile-main">
-      <h2 class="profile-name">Stephany Torres</h2>
-      <p class="profile-position">Web Developer</p>
-      <p class="profile-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste facilis alias magnam praesentium libero odit, commodi deserunt animi labore voluptatibus sed repellendus fugit velit laboriosam quod cumque consequuntur dolorum quis.</p>
+      <h2 class="profile-name">{{card.title}}</h2>
+      <p class="profile-position">{{card.subtitle}}</p>
+      <p class="profile-body">{{card.body}}</p>
     </div>
   </div>
   </div>
@@ -24,13 +27,34 @@
 export default {
   name: "HelloWorld",
   props: {
-    msg: String
+    icons: Object,
+    card: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      selected: false
+    };
+  },
+  methods: {
+    selectItem: function() {
+      this.selected = true;
+      this.$emit("selected", this.card.recordid);
+    },
+    switchState: function() {
+      this.selected = false;
+    }
   }
+
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../assets/scss/colorVariables.scss";
+@import "../assets/scss/fontsVariables.scss";
 
 .card-wrapper {
   box-sizing: border-box;
@@ -39,6 +63,11 @@ export default {
   display: grid;
 	align-items: start;
 	justify-items: center;
+}
+
+.selected {
+  border: 1px solid brown;
+  background-color: $selected-card-background;
 }
 
 .card {
@@ -62,7 +91,7 @@ export default {
   display: block;
   height: 1px;
   width: 4rem;
-  background:  #5bcbf0;
+  background:  $icons-background;
   margin: 0.7em auto 0.5em;
   opacity: 0.35;
 }
@@ -88,7 +117,7 @@ export default {
   text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 3px;
-  color: #5bcbf0;
+  color: $icons-background;
   margin-bottom: 2em;
 }
 
@@ -99,7 +128,7 @@ export default {
 }
 
 .social-link {
-  color: #5bcbf0;
+  color: $icons-background;
   opacity: 0.5;
   font-size: 1.125rem;
 }

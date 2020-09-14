@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link with our stylesheet -->
+    <link rel="stylesheet" href="formValidation.css" />
+
+     <!-- Dev version-->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>First Form in Vue</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <form v-on:submit.prevent="checkForm" action="/something" method="post">
+
+              <p v-if="errors.length">
+                <b>Please correct the following error(s):</b>
+                <ul>
+                  <li v-for="error in errors">{{ error }}</li>
+                </ul>
+              </p>
+        
+              <div class="row">
+                <div class="label-wrapper">
+                  <label for="fname">First Name</label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="fname" name="firstname" placeholder="Your name" v-model="firstname">
+                  <p style="color: red;">{{ firstnameValidation }}</p>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="label-wrapper">
+                  <label for="lname">Last Name</label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="lname" name="lastname" placeholder="Your last name" v-model="lastname">
+                  <p style="color: red;">{{ lastnameValidation }}</p>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="label-wrapper">
+                  <label for="lname">Age</label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="number" id="age" name="age" placeholder="Your age" v-model="age" min="0">
+                  <p style="color: red;">{{ ageValidation }}</p>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="label-wrapper">
+                  <label for="country">Country</label>
+                </div>
+                <div class="input-wrapper">
+                  <select id="country" name="country" v-model="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                  </select>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="label-wrapper">
+                  <label for="subject">Subject</label>
+                </div>
+                <div class="input-wrapper">
+                  <textarea id="subject" name="subject" placeholder="Write something" v-model="subject" style="height:200px"></textarea>
+                </div>
+              </div>
+        
+              <div class="row">
+                <input type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
+          
+    </div>
+</body>
+
+<script>
+  var app = new Vue({
+    el: "#app",
+    data: {
+      errors: [],
+      firstname: null,
+      lastname: null,
+      age: null,
+      country: null,
+      subject: null,
+    },
+    computed: {
+      selectedFields() {
+        return [this.firstname, this.lastname, this.age];
+      },
+      firstnameValidation() {
+        if (this.firstname && this.error !== []) {
+          return 'Name Field is Required';
+        }
+      }
+      ,
+      lastnameValidation() {
+        if ( this.lastname && this.error !== []) {
+          return 'Last Name Field is Required';
+        }
+      },
+      ageValidation() {
+        if (this.age  && this.error !== []) {
+          return 'Age Field is Required';
+        }
+      }
+    },
+    methods: {
+      //checkForm: function(event){
+      checkForm: function(){
+        let result = this.selectedFields.every(elem => elem !== null);
+        this.errors = result ? [] : ["Please check fields"];
+
+      
+        // if(result) return true;
+        // this.errors = [];
+
+        // if(!this.firstname) this.errors.push("Name required.");
+        // if(!this.lasttname) this.errors.push("Last Name required.");
+        // if(!this.age) this.errors.push("Age required.");
+        //e.preventDefault();
+      }
+    }
+  });
+</script>
+</html>

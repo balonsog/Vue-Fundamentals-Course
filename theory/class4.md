@@ -40,6 +40,10 @@ Our component has now been registered globally. Now we use this inside of our Ap
  <fancy-button/>
 </template>
 ```
+**Registering a component locally**
+
+We can also register our components locally within our application. This can be done by adding it specifically to our Vue instance,
+
 
 ### Props
 

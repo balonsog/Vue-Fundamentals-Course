@@ -3,6 +3,7 @@
     <HelloWorld 
       :card="card"
       @selected="getInfo"/>
+   <fancy-button/>
   </div>
 </template>
 

@@ -14,8 +14,6 @@ Generally when we conceive the design of a new component we should consider the 
 
 - Register this component so that it can be used locally within a component
 
-Translated with www.DeepL.com/Translator (free version)
-
 **Registering components globally**
 
 We can create components and register them globally with the following interface: Vue.component(name: string, options: Object<VueInstance>). Although it isn't required, when naming our components it's important to adhere to the naming conventions set by the W3C Custom Elements specification (https://www.w3.org/TR/custom-elements/#valid-custom-element-name), that is, all-lowercase and it must contain a hyphen.

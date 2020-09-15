@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- Starts dividing content in 2 columns -->
     <div class="profile-sidebar">
-      <img class="profile-image" src="../assets/photo-card.png" alt="">
+      <img class="profile-image" src="image" alt="">
       <ul class="social-list">
-        <li class="social-item"><a class="social-link" href="#"><i class="fab fa-dribbble-square"></i></a></li>
-        <li class="social-item"><a class="social-link" href="#"><i class="fab fa-facebook-square"></i></a></li>
-        <li class="social-item"><a class="social-link" href="#"><i class="fab fa-twitter-square"></i></a></li>
+        <li class="social-item"><a class="social-link" href="#"><i class="icons.dfIcon"></i></a></li>
+        <li class="social-item"><a class="social-link" href="#"><i class="icons.dsIcon"></i></a></li>
+        <li class="social-item"><a class="social-link" href="#"><i class="icons.dtIcon"></i></a></li>
       </ul>
     </div>
     <div class="profile-main">
-      <h2 class="profile-name">{{card.title}}</h2>
-      <p class="profile-position">{{card.subtitle}}</p>
-      <p class="profile-body">{{card.body}}</p>
+      <h2 class="profile-name">{{title}}</h2>
+      <p class="profile-position">{{subtitle}}</p>
+      <p class="profile-body">{{body}}</p>
     </div>
   </div>
   </div>
@@ -25,23 +25,48 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "CardItem",
   props: {
-    icons: Object,
-    card: {
-      type: Object,
+    // icons: Object,
+    // card: {
+    //   type: Object,
+    //   required: true
+    // }
+
+    image: {
+      type: String,
+      default: '../assets/photo-card.png'
+    },
+    title: {
+      type: String,
       required: true
+    },
+    subtitle: {
+      type: String,
+      required: true
+    },
+    body: {
+      type: String,
+      required: true
+    },
+    recordid: {
+      type: [String, Number],
+      default: Math.random().toString(16).slice(2)
+    },
+    icons: {
+      type: Object,
+      default: {dfIcon: 'fab fa-dribbble-square', dsIcon: 'fab fa-facebook-square', dtIcon: 'fab fa-twitter-square'}
     }
   },
   data() {
     return {
-      selected: false,
+      selected: false
     };
   },
   methods: {
     selectItem: function() {
       this.selected = true;
-      this.$emit("selected", this.card.recordid);
+      this.$emit("selected", this.recordid);
     },
     switchState: function() {
       this.selected = false;

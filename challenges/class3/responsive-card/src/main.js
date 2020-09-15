@@ -1,9 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
-import FancyButton from './components/FancyButton.vue';
 
+// RN its globally register
+import FancyButton from './components/FancyButton.vue'; // Just comment it to register locally
 
-Vue.component('fancy-button', FancyButton);
+// RN its globally register
+Vue.component('fancy-button', FancyButton); // Just comment it to register locally
 
 Vue.config.productionTip = false;
 

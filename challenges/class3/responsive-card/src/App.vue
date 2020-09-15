@@ -10,11 +10,12 @@
 
 <script>
 //import HelloWorld from "./components/HelloWorld.vue";
-
+//import FancyButton from './components/FancyButton.vue'; //Just uncomment it to register locally
 export default {
   name: "App",
   components: {
     //HelloWorld
+    //FancyButton  //Just uncomment it to register locally
   },
   data() {
     return {

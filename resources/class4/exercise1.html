@@ -106,7 +106,8 @@
         this.errors = result ? [] : ["Please check fields"];
       },
 			checkField(val) {
-				this.error = val !== null ? '' : 'Please check this field'
+        let field = 'firstname';
+				this.error = val !== null ? '' : `Please check ${field} field`;
 			}
     }
   });

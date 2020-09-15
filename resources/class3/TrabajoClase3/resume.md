@@ -14,6 +14,8 @@ Class3 Computed Properties & Methods
 - Class and Style binding
 
 Class 4 Components
+- Props Fundamentals
+
 Class 5 Events
 Class 6 Instance LifeCycle
 Class 7 Vue Router

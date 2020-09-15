@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="exercise2.css" />
+
+    </head>
+    <body>
+        <div id="app" class="bg-blue-300 flex flex-col justify-center items-center h-screen w-full text-sm">
+            
+            <template v-if="boxShow">
+                <!-- <div class="color-box"></div>
+                <div class="color-box"></div>
+                <div class="color-box"></div> -->
+
+                <div class="color-box" v-for="(variant, index) in variants" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }"></div>
+            </template>
+
+        </div>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    variants: [{variantId: 1,variantColor: 'red'}, {variantId: 2, variantColor: 'green'}, {variantId: 3, variantColor: 'blue'}],
+                },
+                computed: {
+                    boxShow: function () {
+                        return this.variants.length;
+                    }
+                }
+            });
+        </script>
+
+        <style>
+            
+        </style>
+    </body>
+</html>

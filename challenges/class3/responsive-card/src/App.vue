@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <HelloWorld 
+    <!-- <HelloWorld 
       :card="card"
-      @selected="getInfo"/>
-   <fancy-button/>
+      @selected="getInfo"/> -->
+    <fancy-button></fancy-button>
+    <button>I'm another button!</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+//import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    //HelloWorld
   },
   data() {
     return {

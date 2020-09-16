@@ -113,6 +113,5 @@ Remember that props are useful for providing detailed specifications on how to u
 
 ### Scoped styles
 
-The scoped attribute isn't part of Vue by default, this comes from our Webpack vue-loader. You'll notice that after adding this, the button styles are specific to our fancy-button component only. If we look at the differences between the two buttons in the following screenshot, we can see that one is merely a button and the other is styling a button with a randomly generated data attribute. This stops the browser from applying the styles to both button elements in this scenario.
-
+The scoped attribute isn't part of Vue by default, this comes from our Webpack vue-loader. 
 When using scoped CSS within Vue, keep in mind that rules created within the component won't be accessible globally across the application:

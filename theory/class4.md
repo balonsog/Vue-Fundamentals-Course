@@ -40,16 +40,44 @@ Our component has now been registered globally. Now we use this inside of our Ap
 ```
 **Registering a component locally**
 
-We can also register our components locally within our application. This can be done by adding it specifically to our Vue instance,
+We can also register our components locally within our application. This can be done by adding it specifically to our Vue instance
+
+```
+Vue.component('fancy-button', FancyButton);
+```
+Before adding any code into our app component, notice that our button has disappeared now that we're no longer globally registering it. To register this locally, we'll need to first import the component similar to how we did before and then add this to a component object within the instance:
+
+```
+<template>
+ <div>
+ <fancy-button></fancy-button>
+ <button>I'm another button!</button>
+ </div>
+</template>
+
+<script>
+import FancyButton from './components/FancyButton.vue';
+
+export default {
+ components: {
+ FancyButton
+ }
+}
+</script>
+
+<style>
+
+</style>
+```
 
 
-### Props
+### PROPS
 
 We've now got the ability to create reusable components that allow us to encapsulate functionality within our project. In order to make these components usable, we'll need to give them the ability to communicate with oneanother. The first thing we'll be looking at is one way communication with component properties (referred to as "props").
 
 The point of component communication is to keep our features distributed, loosely coupled, and in turn make our application easier to scale. To enforce loose coupling, you should not attempt to reference parent component(s) data within the child component and it should be passed using props only.
 
-**When it comes to passing information down from one component to another, props are the first technique that most Vue developers encounter. By defining a props property on a component, it can then receive data.**
+***When it comes to passing information down from one component to another, props are the first technique that most Vue developers encounter. By defining a props property on a component, it can then receive data.***
 
 ![propsCommunication](../assets/class4/propsCommunication.png)
 
@@ -61,8 +89,23 @@ Notice how we're able to bind to the buttonText value inside of our template as 
 </template>
 ```
 
+
+### Defining Props: Best Practices
 ![props](../assets/class4/propsComponent.jpg)
 
+**The Object Syntax**
+Instead, for most scenarios, we should define our props using the Object syntax. This allows us to define three key prop attributes that allow you to answer three fundamental questions:
+
+```type```: What data type(s) can be expected?
+```required```: Is the prop is required or not
+```default```: Is there default content that accounts for most scenarios so we don’t have to repeat ourselves multiple time?
+
+Finally, when defining your props, remember to answer the three fundamental questions:
+
+What data type(s) can be expected?
+Is the prop required?
+Can you provide default data to account for most scenario?
+Remember that props are useful for providing detailed specifications on how to use a component, but this is also it’s downside as this does not allow flexibility on the developer’s part.
 
 ### Scoped styles
 

@@ -45,7 +45,21 @@ We can also register our components locally within our application. This can be 
 
 ### Props
 
-When it comes to passing information down from one component to another, props are the first technique that most Vue developers encounter. By defining a props property on a component, it can then receive data.
+We've now got the ability to create reusable components that allow us to encapsulate functionality within our project. In order to make these components usable, we'll need to give them the ability to communicate with oneanother. The first thing we'll be looking at is one way communication with component properties (referred to as "props").
+
+The point of component communication is to keep our features distributed, loosely coupled, and in turn make our application easier to scale. To enforce loose coupling, you should not attempt to reference parent component(s) data within the child component and it should be passed using props only.
+
+**When it comes to passing information down from one component to another, props are the first technique that most Vue developers encounter. By defining a props property on a component, it can then receive data.**
+
+![propsCommunication](../assets/class4/propsCommunication.png)
+
+Notice how we're able to bind to the buttonText value inside of our template as we've created ourselves a props array that contains string or object values for each component property. Setting this can be done with kebab case as an attribute on the component itself, this is required as HTML is case-insensitive:
+
+```
+<template>
+ <fancy-button button-text="I'm set using props!"></fancy-button>
+</template>
+```
 
 ![props](../assets/class4/propsComponent.jpg)
 

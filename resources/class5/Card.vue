@@ -24,7 +24,18 @@ export default {
   props: {
     image: {
         type: String,
-        defaul: '../assets/logo.png'
+        defaul: '../assets/logo.png',
+        // Validator takes an anonymous function 
+        // that receives the passed-down value
+        // as its first argument
+        validator: propValue => {
+         const hasImagesDirectory = propValue.indexOf('/images/') > -1
+	        const isPNG = propValue.endsWith('.png')
+	        const isJPEG = propValue.endsWith('.jpeg') || propValue.endsWith('.jpg')
+	        const hasValidExtension = isPNG || isJPEG
+
+	        return hasImagesDirectory && hasValidExtension
+       }
     }, 
     title: {
         type: String,

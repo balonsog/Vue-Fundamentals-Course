@@ -16,19 +16,23 @@ Generally when we conceive the design of a new component we should consider the 
 
 **Registering components globally**
 
-We can create components and register them globally with the following interface: Vue.component(name: string, options: Object<VueInstance>). Although it isn't required, when naming our components it's important to adhere to the naming conventions set by the W3C Custom Elements specification (https://www.w3.org/TR/custom-elements/#valid-custom-element-name), that is, all-lowercase and it must contain a hyphen.
-
+We can create components and register them globally with the following interface:
+```
+ Vue.component(name: string, options: Object<VueInstance>)
+```
+Although it isn't required, when naming our components it's important to adhere to the naming conventions set by the W3C Custom Elements specification (https://www.w3.org/TR/custom-elements/#valid-custom-element-name), that is, all-lowercase and it must contain a hyphen.
 inside of our App.vue file, let's register our FancyButton component by first importing it from the appropriate path:
 
 ```
 import HelloWorld from "./components/HelloWorld.vue";
 ```
-Afterwards, we can register the component
+Afterwards, we can register the component (by two different ways)
+
+![props](../assets/class4/registerComponent.png)
 
 ```
 Vue.component('fancy-button', FancyButton);
 ```
-![props](../assets/class4/registerComponent.png)
 
 
 Our component has now been registered globally. Now we use this inside of our App.vue component, with the tag that we specified. We just add that to the template like so:
@@ -102,9 +106,9 @@ Instead, for most scenarios, we should define our props using the Object syntax.
 
 Finally, when defining your props, remember to answer the three fundamental questions:
 
-What data type(s) can be expected?
-Is the prop required?
-Can you provide default data to account for most scenario?
+- What data type(s) can be expected?
+- Is the prop required?
+- Can you provide default data to account for most scenario?
 Remember that props are useful for providing detailed specifications on how to use a component, but this is also it’s downside as this does not allow flexibility on the developer’s part.
 
 ### Scoped styles

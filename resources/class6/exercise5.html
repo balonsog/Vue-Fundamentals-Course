@@ -11,7 +11,14 @@
             
             <!-- Exercise 2 -->
             <!-- An unordered list of the 3 names and a title -->
-            <my-list :list="{ names: ['John', 'Jane', 'Mary'] }">My List of Names</my-list>
+            <my-list text="My List of Names">
+                
+                <template v-slot:list>
+                    <ul v-for="item in items">
+                        {{ item }}
+                    </ul>
+                </template>
+            </my-list>
             
             <!-- Exercise 3 -->
             <!-- Structure a web site with the given 3 slots -->
@@ -36,9 +43,9 @@
                 template: '<div :style="{ fontSize: textSize + \'px\'}"><slot></slot></div>'
             });
             Vue.component('my-list', {
-                props: ['list'],
+                props: ['text'],
                 
-                template: '<div><h1><slot></slot></h1><ul><li v-for="name in list.names">{{ name }}</li></ul></div>'
+                template: '<div><h1>{{text}}</h1><slot name="list"></slot></div>'
             });
             Vue.component('my-site', {
                 props: ['list'],
@@ -49,7 +56,7 @@
             var app = new Vue({
                 el: '#app',
                 data: {
-                    
+                    items: ['John', 'Jane', 'Mary']
                 }
             });
         </script>

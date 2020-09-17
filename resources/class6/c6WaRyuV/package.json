@@ -11,7 +11,7 @@
     "babel-preset-react": "*"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -p",
     "watch": "webpack -w"
   }
 }

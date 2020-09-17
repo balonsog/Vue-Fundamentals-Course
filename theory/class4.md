@@ -114,4 +114,5 @@ Remember that props are useful for providing detailed specifications on how to u
 ### Scoped styles
 
 The scoped attribute isn't part of Vue by default, this comes from our Webpack vue-loader. 
+Component Scoped CSS, SCSS so that is only available inside the component: and that bring to us a way to avoid class collisions.
 When using scoped CSS within Vue, keep in mind that rules created within the component won't be accessible globally across the application:

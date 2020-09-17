@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            
+            <!-- Exercise 1 -->
+            <!-- A <p> tag with an in-line font size matching the prop -->
+            <size-title text-size="25">Vue Bootcamp</size-title>
+            
+            <!-- Exercise 2 -->
+            <!-- An unordered list of the 3 names and a title -->
+            <my-list list="{ names: ['John', 'Jane', 'Mary'] }">My List of Names</my-list>
+            
+            <!-- Exercise 3 -->
+            <!-- Structure a web site with the given 3 slots -->
+            <my-site>
+                <template v-slot:header>
+                    My Website Header Here
+                </template>
+                <template v-slot:body>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                </template>
+                <template v-slot:footer>
+                    &copy; 2020 Copyright
+                </template>
+            </my-site>
+            
+        </div>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    
+                }
+            });
+        </script>
+    </body>
+</html>

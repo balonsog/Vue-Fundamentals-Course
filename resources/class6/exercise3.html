@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app" class="bg-blue-200 w-full h-screen ">
+            <title-text>
+                My Title
+                <template v-slot:something>Another Text</template>
+            </title-text>
+        </div>
+        
+        <script>
+            Vue.component('title-text', {
+                template: '<div><h1><slot></slot></h1><slot name="something"></slot></dif>'
+            });
+            
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -13200,20 +13200,25 @@ var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.use(_vueRouter2.default);
+//Add dependencies
 
-var PageOne = { 'template': '<div>PageOne</div>' };
+_vue2.default.use(_vueRouter2.default); //We inform that we need to use Vue Router
+//We allow to use <router-view></outer-view> (where is the content of our page)
 
-var routes = [{ path: '/page-one', component: PageOne }];
+var PageOne = { 'template': '<div>PageOne123</div>' };
+var PageTwo = { 'template': '<div>My New Page Here</div>' };
 
-var router = new _vueRouter2.default({
+var routes = [//Create routes : {path, component}
+{ path: '/page-one', component: PageOne }, { path: '/new-page', component: PageTwo }];
+
+var router = new _vueRouter2.default({ //Create a instance and pass into it our routes
     routes: routes
 });
 
 new _vue2.default({
     el: '#app',
 
-    router: router,
+    router: router, //Notice to our app thats an router app
 
     components: {},
 

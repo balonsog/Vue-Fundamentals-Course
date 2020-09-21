@@ -8,3 +8,19 @@ The life cycle of Vue begins when we declare the new instance of Vue by calling 
 At this point, it is important to specify that **the data object does not exist** from our instance of Vue.
 
 After being executed the **_beforeCreate_** method, Vue has access to the data object of our app. The Vue instance has already been created.
+
+### A Functional Component:
+- Can’t have its own data, computed properties, watchers, lifecycle events, or methods.
+- Can’t have a template, unless that template is precompiled from a single-file component. That’s why we used a render function above.
+- Can be passed things, like props, attributes, events, and slots.
+Returns a VNode or an array of VNodes from a render function. Unlike a normal component that has to have a single root VNode, it can return an array of VNodes.
+
+As you might imagine (without less functionality) a functional component is a little faster. We can make a functional component by simply adding the option:
+
+![functionalComponent](../assets/class7/functionalComponent.png)
+
+Notice how we now use the context parameter to access slots? This context argument is how we get access to to things like props, children, data, parent, listeners, and slots inside a functional component since we no longer can use this. The official Vue documentation goes into more detail.
+
+If we’re using Vue’s single file components we can declare a functional components at the template level. Here is the above example as a single file component:
+
+![functionalComponent](../assets/class7/functionalCTemplate.png)

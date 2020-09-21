@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./index.css">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/74b109fddc.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
 </head>
 <body>
     <header>
@@ -26,11 +28,11 @@
 
     <div class="content">
         <div class="search-bar">
-
-            <input type="text" class="search-bar__input" placeholder="Enter your search" aria-label="search"/>
-
-            <button class="search-bar__submit" aria-label="submit search"><i class="fas fa-search"></i></button>
+            <input id="input" type="text" class="search-bar__input" placeholder="Enter your search" aria-label="search"/>
+            <button class="search-bar__submit" aria-label="submit search" type="submit" onclick="getMovies()"><i class="fas fa-search"></i></button>
         </div>
+
+        <div id="cards" class="cards-content"></div>
     </div>
 </body>
 </html>

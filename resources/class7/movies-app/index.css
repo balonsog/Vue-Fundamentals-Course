@@ -68,6 +68,12 @@
     border-radius: 50%;
 }
 
+/* cards styles start here*/
+
+.cards-body {
+    border: 2px solid red;
+}
+
 
 /* Navigation styles start here*/
 header {

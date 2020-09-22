@@ -3,11 +3,10 @@ let results = null;
 
 function getMovies() {
     let query = document.getElementById('input').value; 
-    console.log(query);
 	axios.get(`http://www.omdbapi.com/?s=${ query }&apikey=${ apikey }`)
 	.then(response => {
 		
-		
+		// response && response.data && response.data.Search
 		results = response.data.Search; // it doesn't check if response fail
 
 		let filterResult = results.filter(elem => {
@@ -18,16 +17,6 @@ function getMovies() {
         for (var i = 0; i < filterResult.length; i++) {
             pushToHTML(filterResult[i]);
         }
-
-        /////
-		console.log(filterResult);
-        let title = filterResult[0].Title;
-        let year = filterResult[0].Year;
-        
-        //document.getElementById('title').innerHTML = title;
-        //document.getElementById('year').innerHTML = year;
-        
-
 
         
 	})
@@ -56,7 +45,6 @@ function getMovies() {
 }
 
 function pushToHTML(datos) {
-    console.log(datos);
     let contenido;
     contenido = '<div class="cards-body">';
     contenido += '<p><strong>' + datos.Title + '</strong><p>';

@@ -13200,9 +13200,11 @@ var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//Add dependencies
+//Add dependencies -> in a refactor we can omitting it
+//import router from './router';
 
-_vue2.default.use(_vueRouter2.default); //We inform that we need to use Vue Router
+
+_vue2.default.use(_vueRouter2.default); //We inform that we need to use Vue Router -> in a refactor we can omitting it
 //We allow to use <router-view></outer-view> (where is the content of our page)
 
 var PageOne = { 'template': '<div>PageOne123</div>' };

@@ -1,3 +1,3 @@
 <template>
-  <div>PageOne123</div>
+  <div>Estoy en la pagina Home</div>
 </template>

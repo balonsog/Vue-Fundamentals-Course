@@ -13207,7 +13207,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _vue2.default.use(_vueRouter2.default); //We inform that we need to use Vue Router -> in a refactor we can omitting it
 //We allow to use <router-view></outer-view> (where is the content of our page)
 
-var PageOne = { 'template': '<div>PageOne123</div>' };
+var PageOne = { 'template': '<div>Estoy en la pagina de home</div>' };
 var PageTwo = { 'template': '<div>My New Page Here</div>' };
 
 var routes = [//Create routes : {path, component}

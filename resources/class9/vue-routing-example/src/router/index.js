@@ -25,10 +25,15 @@ export default new Router({
       name: 'event-create',
       component: EventCreate
     },
+    /**
+     * Using $route.params in your component limits its flexibility. 
+     * A more modular way to create your dynamic components is to set props: true in your route configuration.
+     */
     {
       path: '/user/:username',  // Dynamic Segment -> username it's a parameter
       name: "user",
-      component:User
+      component:User,
+      //props: true -> $route.params to be sent into your component as a normal prop.
     }
   ]
 })

@@ -32,3 +32,4 @@ A side effect of this you should be aware of is that when we go to an invalid UR
 
 
 - DOC: https://router.vuejs.org/api/#the-route-object
+

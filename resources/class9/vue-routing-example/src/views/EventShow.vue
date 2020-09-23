@@ -4,7 +4,11 @@
 
 
 <script>
-export default {
+/**             
+ * module.export  //Other option
+ * and requiere 
+ */
+export default {  // Allow us to export as a js module -> import X from Y 
   props: ['id']
 }
 </script>

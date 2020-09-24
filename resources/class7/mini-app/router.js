@@ -10,7 +10,16 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     routes: [                   
-        { path: '/page-one', component: HomePage },
+        { path: '/page-one', 
+          redirect: { name: 'pageone'}
+        },
+        {
+          path: '/page-one-us', 
+          name:'pageone',
+          component: HomePage
+        },
+
+        { path: '/page-one', name: 'pageone',component: HomePage },
         { path: '/new-page', component: ContactPage }
     ]
 });

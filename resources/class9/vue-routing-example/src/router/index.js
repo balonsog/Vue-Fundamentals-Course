@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import EventCreate from '../views/EventCreate.vue'
 import EventList from '../views/EventList.vue'
 import EventShow from '../views/EventShow.vue'
@@ -35,7 +36,7 @@ export default new Router({
       path: '/user/:username',  // Dynamic Segment -> username it's a parameter
       name: "user",
       component:User,
-      //props: true -> $route.params to be sent into your component as a normal prop.
+      props: true //-> $route.params to be sent into your component as a normal prop.
     }
   ]
 })

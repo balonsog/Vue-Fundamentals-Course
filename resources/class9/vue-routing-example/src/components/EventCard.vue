@@ -3,29 +3,28 @@
     <div class="event-card -shadow">
       <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
       <h4 class="title">{{ event.title }}</h4>
-      <!-- <BaseIcon name="users" /> -->
       <BaseIcon name="users">{{ event.attendees.length }} attending</BaseIcon>
-      <!-- <span>{{ event.attendees.length }} attending</span> -->
-    </div>
+    </div>    
   </router-link>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      event: {
-        id: 1,
-        title: 'Learn Vue',
-        date: 'Tues Sept 22, 2020',
-        time: '6:00',
-        attendees: [
-          { id: 'abc123', name: 'Steph Torres' },
-          { id: 'def456', name: 'Angel Corral' }
-        ]
-      }
-    }
-  }
+  props: { event: Object}
+  // data() {
+  //   return {
+  //     event: {
+  //       id: 1,
+  //       title: 'Learn Vue',
+  //       date: 'Tues Sept 22, 2020',
+  //       time: '6:00',
+  //       attendees: [
+  //         { id: 'abc123', name: 'Steph Torres' },
+  //         { id: 'def456', name: 'Angel Corral' }
+  //       ]
+  //     }
+  //   }
+  // }
 }
 </script>
 

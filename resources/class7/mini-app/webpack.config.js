@@ -15,7 +15,7 @@ module.exports = {
     "rules": [
       {
         "use": {
-          "loader": "babel-loader",
+          "loader": "vue-loader",
           "options": {
             "presets": [
               "babel-preset-env",

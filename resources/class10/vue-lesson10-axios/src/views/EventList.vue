@@ -7,7 +7,7 @@
 
 <script>
 import EventCard from '@/components/EventCard.vue'
-import EventService from '@/services/EventService.js'
+//import EventService from '@/services/EventService.js'
 
 export default {
   components: {
@@ -18,14 +18,17 @@ export default {
       events: []
     }
   },
-  created() {
-    EventService.getEvents()
-      .then(response => {
-        this.events = response.data
-      })
-      .catch(error => {
-        console.log('There was an error:', error.response)
-      })
+  // created() {
+  //   EventService.getEvents()
+  //     .then(response => {
+  //       this.events = response.data
+  //     })
+  //     .catch(error => {
+  //       console.log('There was an error:', error.response)
+  //     })
+  // },
+  async mounted() {
+    this.$store.dispatch('fetchStations')
   }
 }
 </script>

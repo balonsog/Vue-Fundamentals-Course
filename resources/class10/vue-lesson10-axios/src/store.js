@@ -30,6 +30,10 @@ export default new Vuex.Store({
           context.commit('SET_LOADING_STATUS')
           context.commit('SET_STATIONS', response.data)
         })
+        .catch(error => {
+          // Handle state in a correct way
+          console.log('There was an error:', error.response)
+        })
     }
   }
 })

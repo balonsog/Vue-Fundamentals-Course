@@ -10,9 +10,8 @@ export default new Vuex.Store({
     stations: []
   },
   getters: {
-    getMessage: state => {
+    getStations: state => {
       let selectedStations = state.stations.map(elem => elem.fields)
-      console.log(selectedStations)
       return selectedStations
     }
   },

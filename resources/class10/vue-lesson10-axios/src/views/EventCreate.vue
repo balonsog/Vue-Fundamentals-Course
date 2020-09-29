@@ -8,8 +8,7 @@
 export default {
   computed: {
     myMessage: function() {
-      let stations = this.$store.getters.getStations
-      return stations
+      return this.$store.getters.getStations
     }
   }
 }

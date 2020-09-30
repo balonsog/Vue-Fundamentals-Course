@@ -9,7 +9,8 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: mapGetters(['myMessage', 'getGeopos'])
-  /* computed: {
+
+  /*   computed: {
     myMessage() {
       return this.$store.getters.getStations
     },

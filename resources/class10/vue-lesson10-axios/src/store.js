@@ -13,6 +13,9 @@ export default new Vuex.Store({
     getStations: state => {
       let selectedStations = state.stations.map(elem => elem.fields)
       return selectedStations
+    },
+    getGeopos: (state, getters) => {
+      return getters.getStations.map(elem => elem.geopos)
     }
   },
   mutations: {

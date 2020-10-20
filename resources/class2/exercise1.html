@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Link with our stylesheet -->
-    <link rel="stylesheet" href="index.css" />
-
     <!-- Dev version-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Hello World in Vue</title>
@@ -17,8 +14,8 @@
 
       <ul>
         <li v-for="product in products">{{product.name}} {{product.quantity}} <span v-if="product.quantity === 0">OUT of stock</span></li>
-        <p v-show="productsInStock">Hay productos que reponer</p>
-      </ul>
+<!--         <p v-show="productsInStock">Hay productos que reponer</p>
+ -->      </ul>
     </div>
   </body>
 
@@ -27,14 +24,22 @@
       el: "#app",
       data: {
         product: 'Socks',
-        //products: ['t-shirts', 'trousers', 'caps']
         products: [{id: 1, quantity: 0, name: 'Cool t-shirt'},
-                   {id: 1, quantity: 7, name: 'Cool trousers'},
-                   {id: 1, quantity: 10, name: 'Cool caps'}]
+                   {id: 2, quantity: 7, name: 'Cool trousers'},
+                   {id: 3, quantity: 10, name: 'Cool caps'}]
+      },
+      watch: {
+        inStock() {
+          let nuevasCantidades = this.inStock.map(elem => elem)
+          nuevasCantidades.map(elem => console.log(elem <= 0))
+        }
       },
       computed: {
         productsInStock(){
           return this.products.filter(elem => elem.quantity === 0).length > 0;
+        },
+        inStock: function(){
+          return this.products.map(elem => elem.quantity)
         }
       }
     });

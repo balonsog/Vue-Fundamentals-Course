@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="vm">
+        <h1> Hello Class that's a first example </h1>
+        <p>{{mainTitle}}</p>
+        
+        <ul v-for="task in tasks">
+            <li>Name task: {{task.name}}, status: {{task.status}}</li>
+        </ul>
+
+        <p>{{counter}}</p>
+        <button v-on:click="updateCounter">Increment counter</button>
+
+        <p v-show="nodeMsg">{{ nodeMsg }}</p>
+        
+    </div>
+</body>
+
+<script>
+    var app = new Vue(
+        {
+            el: '#vm',
+            data: {
+                counter: 0,
+                message: 'Hello Developers',
+                nodeMsg: '',
+                mainTitle: 'To Do list',
+                tasks: [
+                    { name: 'Read doc', status: 'completed'}, 
+                    { name: 'Learn Vue', status: 'no completed'}, 
+                    { name: 'Implement first app', status: 'completed'}]                
+            },
+            computed: {
+                tasksToDo: function(){
+                    return this.tasks.filter(elem => elem.status === 'no completed').length;
+                }
+            },
+            watch: {
+                counter: function(newValue, oldValue) {
+                    console.log(oldValue)
+                }
+            },
+            methods: {
+                updateCounter: function(event) {
+
+                    let rootNode = event ? event.target : null
+                    let value = rootNode || {}
+                    this.nodeMsg = value.tagName
+
+                    this.updateMsg()
+                    /* alert(this.message + '!')
+                    alert(value.tagName) */
+                },
+                updateMsg: function() {
+                    if (this.nodeMsg === 'BUTTON') {
+                        this.nodeMsg = this.nodeMsg.toLowerCase() 
+                    }
+                }
+            }
+        })
+
+</script>
+</html>

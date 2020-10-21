@@ -14,8 +14,8 @@
 
       <ul>
         <li v-for="product in products">{{product.name}} {{product.quantity}} <span v-if="product.quantity === 0">OUT of stock</span></li>
-<!--         <p v-show="productsInStock">Hay productos que reponer</p>
- -->      </ul>
+        <p v-show="productsInStock">Hay productos que reponer</p>
+      </ul>
     </div>
   </body>
 
@@ -38,7 +38,7 @@
         productsInStock(){
           return this.products.filter(elem => elem.quantity === 0).length > 0;
         },
-        inStock: function(){
+        inStock: function() {
           return this.products.map(elem => elem.quantity)
         }
       }

@@ -5,8 +5,13 @@
     <body>
         
         <div id="app">
-            <input name="field" v-model="field" />
+            <input name="firstname" v-model="field" />
+            <input name="lastname" v-model="lastname" />
+            <input name="age" v-model="age" />
+            <input name="number" v-model="number" />
             <p v-if="field !== ''">The current values is: {{ exclamation }}</p>
+            
+            <button v-on:click="showValues">show all values</button>
             
         </div>
         
@@ -15,10 +20,19 @@
                 el: '#app',
                 data: {
                     field: '',
+                    lastname: '',
+                    age: '',
+                    number: '',
                 },
                 computed: {
                     exclamation: function () {
                         return this.field + '!!';
+                    }
+                },
+                methods: {
+                    showValues: function() {
+                        // app.$get(data)
+                        Object.values(app.$data).map(elem => console.log(elem))
                     }
                 }
             });

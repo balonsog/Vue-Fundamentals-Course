@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <div class="container">
-            <form @submit="checkForm" action="/something" method="post">
+            <form v-on:submit.prevent="checkForm" action="/something" method="post">
 
               <p v-if="errors.length">
                 <b>Please correct the following error(s):</b>
@@ -97,9 +97,9 @@
         if(this.firstname && this.lastname && this.age) return true;
         this.errors = [];
         if(!this.firstname) this.errors.push("Name required.");
-        if(!this.lasttname) this.errors.push("Last Name required.");
+        if(!this.lastname) this.errors.push("Last Name required.");
         if(!this.age) this.errors.push("Age required.");
-        e.preventDefault();
+        //event.preventDefault(); //JavaScript native 
       }
     }
   });
